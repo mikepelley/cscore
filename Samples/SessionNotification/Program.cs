@@ -16,7 +16,7 @@ namespace SessionNotification
                 {
                     using (var sessionControl2 = sessionControl.QueryInterface<AudioSessionControl2>())
                     {
-                        Console.WriteLine(sessionControl2.Process.ProcessName);
+                        Console.WriteLine(sessionControl2.Process?.ProcessName ?? "System");
                     }
                     var sessionEvents = new AudioSessionEvents();
                     sessionEvents.SimpleVolumeChanged += OnSimpleVolumeChanged;
